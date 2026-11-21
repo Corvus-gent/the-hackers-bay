@@ -27,7 +27,7 @@ Import this repository as an **Other** project. The checked-in Vercel configurat
 - Equip a pixel parrot pirate from four classes and 20 wearables. Captain Squawk can read a public profile to draft Builds, Wants, and Offers. Try Private Parrot mode for NYTEX confidential inference and a receipt check.
 - Paste a public event into **Sink a Luma** to see its published details through the Deckhand, Navigator, Quartermaster, or Merchant lens.
 - Enter the Demo Day room and follow Captain Squawk to three suggested crewmates. Both sides must agree to reveal a suggested meetup.
-- Draft a crew on the organizer’s ship deck or browse the sponsor treasure map. Try **Proof of Boat** for a repository preview.
+- [Create an event](https://corvus.gent/hackersbay/create) from public Luma details. Share the boarding invite and draft the registered crew on the organizer’s ship deck. See [live crew counts](https://corvus.gent/hackersbay/crew). Browse the sponsor treasure map. Try **Proof of Boat** for a repository preview.
 - Watch the autoplay in [vertical](https://corvus.gent/hackersbay/demo?format=vertical) or [wide](https://corvus.gent/hackersbay/demo?format=wide). Press **M** for sound, **Space** to pause, or **R** to replay.
 
 ## How the sponsors are used
@@ -38,7 +38,7 @@ Import this repository as an **Other** project. The checked-in Vercel configurat
 | [Context.dev](https://www.context.dev/) | Reads public profile links for the standard scout when `CONTEXT_DEV_API_KEY` is configured. | A plain public-page read and deterministic profile draft |
 | [NYTEX](https://nytokenexchange.com/) | TrustedRouter handles confidential persona inference and can provide signed receipts with `TRUSTEDROUTER_API_KEY` or `NYTEX_TRUSTEDROUTER_API_KEY`. | A labeled private-mode demo |
 
-An optional `HACKERSBAY_OPENAI_API_KEY` enables standard persona drafting. `REDIS_TLS_URL` or `REDIS_URL` enables shared intro links across browsers.
+An optional `HACKERSBAY_OPENAI_API_KEY` enables standard persona drafting. `REDIS_TLS_URL` or `REDIS_URL` enables shared intro links, organizer rosters, and live crew counts across browsers.
 
 ## Straight talk
 
@@ -46,7 +46,7 @@ An optional `HACKERSBAY_OPENAI_API_KEY` enables standard persona drafting. `REDI
 - The event details and official RSVP come from Boat Hackathon. The demo pirates, match reasons, traction, and suggested meetups are staged.
 - Private Parrot skips the public scout. With a key, our server sends the public-profile excerpt over HTTPS to TrustedRouter’s confidential route. The creator checks the signed receipt for the original draft. A verified receipt establishes origin and integrity. Without a key, the link yields a local suggestion. [TrustedRouter receipt docs](https://trustedrouter.com/docs/receipts)
 - The standard scout sends a Context.dev public-page excerpt to a short-lived Boat.dev sandbox for a fixed processing job. The Context key stays server-side. Live scouts use the Redis-backed budget. The parrot log shows provider results and demo fallbacks.
-- With zero environment variables, intro acceptance runs in one browser. The game, event lenses, and autoplay work with the default demo services.
+- With zero environment variables, intro acceptance runs in one browser. Event creation uses a browser-local preview and live totals show as unavailable. The game, event lenses, and autoplay work with the default demo services.
 
 ## Project files
 
