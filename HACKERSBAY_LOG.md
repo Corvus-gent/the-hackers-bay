@@ -294,3 +294,20 @@ Times are Paris local time. The demo is built around Boat Hackathon Demo Day in 
 - Verified at 375px with a stubbed Luma import and at 414px with real Redis, separate guest and organizer browser contexts, an invalid organizer key, and repeated save and acceptance requests.
 - Next. Publish the three 60-second cuts and the two-minute pitch for Demo Day.
 - **STEER ME:** Keep the initial deck at 10 seats or add a host-defined seat count.
+
+## H35 · 2026-11-21 20:53 CET · Remote pitch first
+
+- Rendered the captioned two-minute 1920 × 1080 pitch with the Deckhand lens, double opt-in, organizer flow, and sinking-rowboat bookends.
+- Decision. Publish the pitch MP4 ahead of the comparison page so Gabe can rehearse. The available chat and footage folders contained no boat-step or car clips. Gabe’s two clips and Colin’s future Klamath deck clip have visible, labeled slots.
+- Verified the file has H.264 video and AAC audio at the requested dimensions and 120 seconds. Inspected representative frames, including both bookends.
+- Next. Upload the three vertical cuts and check playback together on the live comparison page.
+- **STEER ME:** Play the captioned pitch as-is or speak over it using the live talk track.
+
+## H36 · 2026-11-21 21:01 CET · Three vertical cuts and cannonball bookends
+
+- Added the phone-friendly comparison with A (Luma sinks), B (boat-step slot), C (car slot), and the widescreen pitch. Each vertical file is 1080 × 1920, 60 seconds, and available to download.
+- The rowboat now takes a bigger hit. Grey guest-list dots drift away, pixel bubbles rise, and The Black Commit sails past. The autoplay demo ends on the same scene in both orientations.
+- Decision. B and C share the opening two seconds of the cannon shot before their respective hooks. All cuts return to the sinking rowboat and QR. The live talk track is in the shot list.
+- Verified dimensions, durations, audio, and metadata playback in Chromium. The comparison and new pages fit at 375px and 414px. The browser demo reached the final QR in both exact capture formats.
+- Next. Verify production playback, then begin the Mac and terminal work.
+- **STEER ME:** Lead with A for the pitch, or swap in B or C when the real footage is available.

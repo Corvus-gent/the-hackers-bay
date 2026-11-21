@@ -848,7 +848,7 @@ body[data-dragging-pirate] { user-select: none; }
 .hull-credit {
   position: absolute;
   z-index: 1;
-  top: 72%; left: 29%;
+  top: 72%; left: calc(29% + var(--ship-shift, 0%));
   transform: translate(-50%, -50%);
   padding: 1px 4px 2px;
   color: #f3e3c0;

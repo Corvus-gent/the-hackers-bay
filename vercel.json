@@ -12,6 +12,10 @@
   ],
   "rewrites": [
     {
+      "source": "/hackersbay/cuts",
+      "destination": "/public/hackersbay/cuts.html"
+    },
+    {
       "source": "/hackersbay/judges",
       "destination": "/public/hackersbay/judges.html"
     },

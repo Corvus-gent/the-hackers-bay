@@ -4,7 +4,7 @@
 
 **Luma is sinking. The Hackers Bay is coming.**
 
-[Live site](https://corvus.gent/hackersbay) · [60-second demo](https://corvus.gent/hackersbay/demo) · [Mac app for Apple Silicon and Intel](https://github.com/Corvus-gent/loading-website/releases/tag/hackersbay-demo-v0.2.0)
+[Live site](https://corvus.gent/hackersbay) · [60-second demo](https://corvus.gent/hackersbay/demo) · [Two-minute pitch and cuts](https://corvus.gent/hackersbay/cuts#pitch) · [Mac app for Apple Silicon and Intel](https://github.com/Corvus-gent/loading-website/releases/tag/hackersbay-demo-v0.2.0)
 
 Built aboard Boat Hackathon 2026, on the Historic Klamath at Pier 9 in San Francisco. [Boat Hackathon](https://boathackathon.com/) · [ShowBoat Demo Day](https://partiful.com/e/574OkdF3XGK3SzsRR3QK) · [@BoatHackathon](https://x.com/BoatHackathon) · [Pier 9 map](https://www.google.com/maps/search/?api=1&query=Historic+Klamath+Pier+9+San+Francisco)
 
