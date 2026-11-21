@@ -36,15 +36,49 @@
       "destination": "/api/hackersbay?action=terminal-sink"
     },
     {
+      "source": "/hackersbay/ayay",
+      "destination": "/api/hackersbay?action=terminal-ayay"
+    },
+    {
       "source": "/hackersbay",
       "has": [
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(?:curl|Curl|wget|Wget|HTTPie|httpie)(?:/.*)?"
+          "value": "(?:[Cc][Uu][Rr][Ll]|[Ww][Gg][Ee][Tt]|[Hh][Tt][Tt][Pp][Ii][Ee])(?:/.*)?"
         }
       ],
       "destination": "/api/hackersbay?action=terminal-home"
+    },
+    {
+      "source": "/hackersbay/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?:[Cc][Uu][Rr][Ll]|[Ww][Gg][Ee][Tt]|[Hh][Tt][Tt][Pp][Ii][Ee])(?:/.*)?"
+        }
+      ],
+      "destination": "/api/hackersbay?action=terminal-home"
+    },
+    {
+      "source": "/hackersbay/race",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?:[Cc][Uu][Rr][Ll]|[Ww][Gg][Ee][Tt]|[Hh][Tt][Tt][Pp][Ii][Ee])(?:/.*)?"
+        }
+      ],
+      "destination": "/api/hackersbay?action=terminal-race"
+    },
+    {
+      "source": "/hackersbay/race/leaderboard",
+      "destination": "/public/hackersbay/race-leaderboard.html"
+    },
+    {
+      "source": "/hackersbay/race",
+      "destination": "/public/hackersbay/race.html"
     },
     {
       "source": "/hackersbay/klamath",
@@ -69,6 +103,18 @@
     {
       "source": "/hackersbay/preview",
       "destination": "/public/hackersbay/preview.html"
+    },
+    {
+      "source": "/hackersbay/crew",
+      "destination": "/public/hackersbay/crew.html"
+    },
+    {
+      "source": "/hackersbay/create",
+      "destination": "/public/hackersbay/create.html"
+    },
+    {
+      "source": "/hackersbay/invite",
+      "destination": "/public/hackersbay/invite.html"
     },
     {
       "source": "/hackersbay/host",
@@ -97,18 +143,6 @@
     {
       "source": "/hackersbay/",
       "destination": "/public/hackersbay/landing.generated.html"
-    },
-    {
-      "source": "/hackersbay/crew",
-      "destination": "/public/hackersbay/crew.html"
-    },
-    {
-      "source": "/hackersbay/create",
-      "destination": "/public/hackersbay/create.html"
-    },
-    {
-      "source": "/hackersbay/invite",
-      "destination": "/public/hackersbay/invite.html"
     },
     {
       "source": "/hackersbay/:path*",
