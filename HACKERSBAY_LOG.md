@@ -311,3 +311,44 @@ Times are Paris local time. The demo is built around Boat Hackathon Demo Day in 
 - Verified dimensions, durations, audio, and metadata playback in Chromium. The comparison and new pages fit at 375px and 414px. The browser demo reached the final QR in both exact capture formats.
 - Next. Verify production playback, then begin the Mac and terminal work.
 - **STEER ME:** Lead with A for the pitch, or swap in B or C when the real footage is available.
+
+## H37 · 2026-11-21 21:05 CET · Native Mac wrapper
+
+- The pitch and all three cuts served as MP4 byte ranges on production at 21:02 Paris.
+- Added a SwiftUI WKWebView app, Captain Squawk’s menu-bar counter, optional squawk sound, local mutual intro notifications, and the “Sink Luma” replay.
+- Decision. Notifications work while the app is running. Only the intro ID crosses the native bridge. The Mac build uses ad hoc signing, and Electron remains available.
+- Verified the bridge script, bundle metadata, and package script syntax on Linux. Next. Compile and package the universal DMG on the GitHub macOS runner, then publish it.
+- **STEER ME:** Keep mutual squawks opt-in, or enable them by default for desktop.
+
+## H38 · 2026-11-21 21:09 CET · Universal Mac release
+
+- GitHub’s macOS runner compiled arm64 and x86_64, verified the ad hoc signed bundle and disk image, and published both the DMG and the zipped app.
+- Downloaded the published assets and checked both SHA-256 sums. The site and submission now link to the native release and retain the Electron downloads.
+- Next. Verify the live terminal outputs and finish the browser easter eggs.
+- **STEER ME:** Pick the native app or Electron as the download you share with judges.
+
+## H39 · 2026-11-21 21:10 CET · Terminal routes and CLI
+
+- Added ANSI art for curl, wget, and HTTPie, text and JSON views for pirates, crew counts, Demo Day lenses and matches, Captain Squawk’s tips, and a streamed 19-frame rowboat sink.
+- Added a zero-dependency CLI with arrow-key controls, an offline Demo Day roster, and a URL that opens the pirate’s kit in the browser.
+- Decision. Keep the CLI unpublished, with a local npx entry and an npm-ready package. A terminal match uses the same class lens and fictional roster as the website.
+- Verified browser and terminal content negotiation, all API payloads, streamed frames, share-link hydration, arrow keys through a pseudo-terminal, and npx using a packed tarball.
+- Next. Check the Vercel rewrites and ship the browser easter eggs.
+- **STEER ME:** Add a roster export command next or keep the terminal focused on building and meeting pirates.
+
+## H40 · 2026-11-21 21:13 CET · Hidden browser cues
+
+- Added the Konami parrot rain, a one-shot sea shanty when you type ahoy, and a wearable Captain Trav hat. Added the hidden Historic Klamath page using the ship operator’s history.
+- Decision. Keep the hat behind the captain link. The shanty plays on that keystroke sequence and leaves the normal sound preference alone. Reduced motion shows a still flock.
+- Verified both mobile widths, the hidden route, hat forwarding from the landing page, and exactly one shanty by instrumenting Web Audio. The native WebView bridge notified once per intro ID in an isolated browser test.
+- Next. Recheck the deployed terminal and browser routes and mirror the current source to the public submission repo.
+- **STEER ME:** Keep the Klamath page discoverable in the README or also hide a link in the ship artwork.
+
+## H41 · 2026-11-21 21:16 CET · Production checks and Desktop 0.1.1
+
+- Confirmed all four videos on production ahead of 21:30, including playback metadata and range requests. The vertical and wide browser demos ended on the sinking rowboat and QR.
+- Ran the original mobile route sweep at 375px and 414px and verified the public footage, organizer, crew, and Klamath routes. Browser QA used local intro state so it did not inflate production totals. Verified all four terminal APIs, three user agents, the ANSI stream, and a local npx run using the production match API.
+- The native 0.1.1 build checks replies even after you switch event lenses. Its universal binary, zipped app, DMG, and checksums passed the release build.
+- Decision. Keep the pitch captioned, the fictional roster labeled, and the three missing footage pickups explicit. The public repo contains the release sources and the zero-key fallback.
+- Next. Replace the three Proof of Boat slots when the original clips arrive.
+- **STEER ME:** Keep A as the first social cut or compare it against B and C once the clips arrive.

@@ -10,8 +10,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const publicPath = resolve(root, 'public/hackersbay');
 process.chdir(root);
 
-const routes = new Map(config.rewrites.map(({ source, destination }) => [source, destination]));
-const notFound = routes.get('/hackersbay/:path*');
+const notFound = config.rewrites.find(rule => rule.source === '/hackersbay/:path*').destination;
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
@@ -47,7 +46,12 @@ const server = createServer(async (req, res) => {
       return res.end();
     }
 
-    const destination = routes.get(url.pathname) || (url.pathname.startsWith('/hackersbay/') ? notFound : url.href);
+    const rule = config.rewrites.find(({ source, has = [] }) =>
+      source === url.pathname && has.every(({ type, key, value }) =>
+        type === 'header' && new RegExp('^(?:' + value + ')$').test(req.headers[key] || '')
+      )
+    );
+    const destination = rule?.destination || (url.pathname.startsWith('/hackersbay/') ? notFound : url.href);
     const target = new URL(destination, url);
     if (target.pathname === '/api/hackersbay') {
       req.query = Object.fromEntries([...url.searchParams, ...target.searchParams]);

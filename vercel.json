@@ -12,6 +12,45 @@
   ],
   "rewrites": [
     {
+      "source": "/hackersbay/api/pirate",
+      "destination": "/api/hackersbay?action=terminal-pirate"
+    },
+    {
+      "source": "/hackersbay/api/crew",
+      "destination": "/api/hackersbay?action=terminal-crew"
+    },
+    {
+      "source": "/hackersbay/api/event/boat-hackathon",
+      "destination": "/api/hackersbay?action=terminal-event"
+    },
+    {
+      "source": "/hackersbay/api/match",
+      "destination": "/api/hackersbay?action=terminal-match"
+    },
+    {
+      "source": "/hackersbay/squawk",
+      "destination": "/api/hackersbay?action=terminal-squawk"
+    },
+    {
+      "source": "/hackersbay/sink/luma",
+      "destination": "/api/hackersbay?action=terminal-sink"
+    },
+    {
+      "source": "/hackersbay",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?:curl|Curl|wget|Wget|HTTPie|httpie)(?:/.*)?"
+        }
+      ],
+      "destination": "/api/hackersbay?action=terminal-home"
+    },
+    {
+      "source": "/hackersbay/klamath",
+      "destination": "/public/hackersbay/klamath.html"
+    },
+    {
       "source": "/hackersbay/cuts",
       "destination": "/public/hackersbay/cuts.html"
     },

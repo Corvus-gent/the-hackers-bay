@@ -4,7 +4,7 @@
 
 **Luma is sinking. The Hackers Bay is coming.**
 
-[Live site](https://corvus.gent/hackersbay) · [60-second demo](https://corvus.gent/hackersbay/demo) · [Two-minute pitch and cuts](https://corvus.gent/hackersbay/cuts#pitch) · [Mac app for Apple Silicon and Intel](https://github.com/Corvus-gent/loading-website/releases/tag/hackersbay-demo-v0.2.0)
+[Live site](https://corvus.gent/hackersbay) · [60-second demo](https://corvus.gent/hackersbay/demo) · [Two-minute pitch and cuts](https://corvus.gent/hackersbay/cuts#pitch) · [Universal native Mac app](https://github.com/Corvus-gent/loading-website/releases/tag/hackersbay-native-v0.1.1) · [Electron fallback](https://github.com/Corvus-gent/loading-website/releases/tag/hackersbay-demo-v0.2.0)
 
 Built aboard Boat Hackathon 2026, on the Historic Klamath at Pier 9 in San Francisco. [Boat Hackathon](https://boathackathon.com/) · [ShowBoat Demo Day](https://partiful.com/e/574OkdF3XGK3SzsRR3QK) · [@BoatHackathon](https://x.com/BoatHackathon) · [Pier 9 map](https://www.google.com/maps/search/?api=1&query=Historic+Klamath+Pier+9+San+Francisco)
 
@@ -50,7 +50,7 @@ An optional `HACKERSBAY_OPENAI_API_KEY` enables standard persona drafting. `REDI
 
 ## Project files
 
-- [Electron app](app/) and [Remotion video kit](video/)
+- [Native SwiftUI app](apps/macos/), [Electron app](app/), and [Remotion video kit](video/)
 - [Hackathon submission](SUBMISSION.md) and [build log](HACKERSBAY_LOG.md)
 - [Shot list](SHOTLIST.md), [Compound edit brief](COMPOUND_PROMPT.md), and [LinkedIn drafts](LINKEDIN.md)
 
@@ -59,3 +59,32 @@ An optional `HACKERSBAY_OPENAI_API_KEY` enables standard persona drafting. `REDI
 Gabe (Corvus) built The Hackers Bay for Boat Hackathon 2026. Colin Lowenberg’s open-source [luma-clone](https://github.com/opencolin/luma-clone) and [moonbase](https://github.com/opencolin/moonbase) inspired the event and organizer workflows.
 
 [MIT license](LICENSE). Bundled fonts retain the licenses in [the asset directory](public/hackersbay/assets/).
+
+## For terminal pirates
+
+Curl, wget, and HTTPie get Captain Squawk and The Black Commit in ANSI art at the home route. The API returns plain text by default. Add `?json` or `&json` to get structured output. Add `?color=0` to disable ANSI art.
+
+```sh
+curl https://corvus.gent/hackersbay
+curl 'https://corvus.gent/hackersbay/api/pirate?class=deckhand&json'
+curl https://corvus.gent/hackersbay/api/crew
+curl 'https://corvus.gent/hackersbay/api/event/boat-hackathon?lens=navigator'
+curl 'https://corvus.gent/hackersbay/api/match?me=deckhand'
+curl https://corvus.gent/hackersbay/squawk
+curl -N https://corvus.gent/hackersbay/sink/luma
+```
+
+`me` accepts a class or nickname. To choose a lens for a nickname, send `class` as well. Match reasons come from the fictional Demo Day roster. The crew API reports the same live Redis counters as the website.
+
+The zero-dependency `hackersbay` CLI is ready to package. It has not been published to npm. Run it from the checkout with Node.js 20 or later.
+
+```sh
+npx --package ./apps/cli hackersbay
+npx --package ./apps/cli hackersbay --class deckhand --name "Copper Byte" --quick
+```
+
+Use the arrow keys to change the class and kit. Press Enter for your matches and a share link that opens the exact kit in the browser. The CLI falls back to the bundled Demo Day roster offline.
+
+The browser has three hidden cues. Use **↑ ↑ ↓ ↓ ← → ← → B A** for parrot rain, type **ahoy** for a one-shot sea shanty, or open the [creator with Captain Trav’s hat](https://corvus.gent/hackersbay/board?captain=trav). The [Historic Klamath’s hidden ship log](https://corvus.gent/hackersbay/klamath) traces the ferry’s history at Pier 9.
+
+The [native SwiftUI Mac app](apps/macos/) adds menu-bar Captain Squawk, mutual intro notifications, and a **Sink Luma** replay.

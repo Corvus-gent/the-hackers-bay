@@ -1,7 +1,7 @@
 import { EVENT_PATH, preset, getPersona, savePersona, normalizeCard, normalizeProfileUrl, guessPersona, cleanText } from './persona.js';
 import { CLASSES, pixelCanvas } from './pirate.js';
 import { artPicture, captainArt, classArt } from './art.js';
-import { normalizeLook, partArt, prepareDressed, rollLook, WARDROBE } from './wardrobe.js';
+import { normalizeLook, partArt, prepareDressed, rollLook, TRAV_HAT, WARDROBE } from './wardrobe.js';
 import { giveCoins, squawkStatus } from './game.js';
 import { boardEvent, browserPirateId, eventLink, eventSelection } from './organizer.js';
 import { playBaySound, wireSound } from './sound.js';
@@ -67,7 +67,16 @@ function showParrotLog(payload, card, url, privateMode) {
 const labels = {hat:'Hat', eyes:'Eyewear', coat:'Outfit', item:'Held item'};
 const names = ['Tide Byte', 'Salt Shard', 'Cinder Voss', 'Bit Marlow', 'Brass Wake', 'Patch Reed'];
 const saved = getPersona();
-let current = saved || preset('hacker');
+const shared = new URLSearchParams(location.search);
+const sharedClass = shared.get('class');
+const sharedName = cleanText(shared.get('pirate'), 48);
+const sharedPirate = sharedName && Object.hasOwn(CLASSES, sharedClass) ? {
+  ...preset(sharedClass), name: sharedName,
+  look: normalizeLook(Object.fromEntries(Object.keys(WARDROBE).map(key => [key, shared.has(key) ? Number(shared.get(key)) : -1])))
+} : null;
+const trav = shared.get('captain') === 'trav';
+const unlockedTrav = trav || (sharedPirate || saved)?.look?.hat === TRAV_HAT;
+let current = sharedPirate || saved || preset('hacker');
 let drawn = '';
 const previews = {};
 
@@ -80,7 +89,9 @@ for (const [key, options] of Object.entries(WARDROBE)) {
   select.name = key;
   select.setAttribute('aria-labelledby',caption.id);
   select.add(new Option('Class kit',-1));
-  options.forEach(([, name], index) => select.add(new Option(name,index)));
+  options.forEach(([, name], index) => {
+    if (key !== 'hat' || index !== TRAV_HAT || unlockedTrav) select.add(new Option(name,index));
+  });
   const tile = document.createElement('span');
   tile.className = 'kit-tile';
   tile.setAttribute('aria-hidden','true');
@@ -144,8 +155,8 @@ function draw() {
 }
 
 cardForm.elements.type.value = current.type;
-if (saved && (saved.source !== 'preset' || saved.look || saved.pirate)) cardForm.elements.name.value = saved.name;
-setAppearance(saved?.look);
+if (sharedPirate || (saved && (saved.source !== 'preset' || saved.look || saved.pirate))) cardForm.elements.name.value = current.name;
+setAppearance(trav ? {...current.look, hat:TRAV_HAT} : current.look);
 setDetails(current);
 draw();
 wireSound(document.querySelector('#bay-sound'));
