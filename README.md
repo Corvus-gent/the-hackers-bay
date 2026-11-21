@@ -1,6 +1,6 @@
 # The Hackers Bay
 
-![Captain Squawk and The Black Commit beside the Boat Hackathon credit](public/hackersbay/art/og-boat-hackathon-credit.jpg)
+![The Black Commit beside a cracked grey passenger boat marked LUMA](public/hackersbay/art/og-luma-battle.jpg)
 
 **Luma is sinking. The Hackers Bay is coming.**
 
