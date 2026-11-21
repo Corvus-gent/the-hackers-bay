@@ -1,0 +1,69 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/hackersbay",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/hackersbay/judges",
+      "destination": "/public/hackersbay/judges.html"
+    },
+    {
+      "source": "/hackersbay/demo",
+      "destination": "/public/hackersbay/demo.html"
+    },
+    {
+      "source": "/hackersbay/log",
+      "destination": "/api/hackersbay?action=log"
+    },
+    {
+      "source": "/hackersbay/preview",
+      "destination": "/public/hackersbay/preview.html"
+    },
+    {
+      "source": "/hackersbay/host",
+      "destination": "/public/hackersbay/host.html"
+    },
+    {
+      "source": "/hackersbay/sponsor",
+      "destination": "/public/hackersbay/sponsor.html"
+    },
+    {
+      "source": "/hackersbay/intro",
+      "destination": "/public/hackersbay/intro.html"
+    },
+    {
+      "source": "/hackersbay/e/boat-hackathon-demo-day",
+      "destination": "/public/hackersbay/event.html"
+    },
+    {
+      "source": "/hackersbay/board",
+      "destination": "/public/hackersbay/board.html"
+    },
+    {
+      "source": "/hackersbay",
+      "destination": "/public/hackersbay/landing.generated.html"
+    },
+    {
+      "source": "/hackersbay/",
+      "destination": "/public/hackersbay/landing.generated.html"
+    },
+    {
+      "source": "/hackersbay/:path*",
+      "destination": "/api/hackersbay?action=not-found"
+    }
+  ],
+  "functions": {
+    "api/hackersbay.js": {
+      "includeFiles": "{HACKERSBAY_LOG.md,public/hackersbay/404.html}",
+      "maxDuration": 30
+    }
+  }
+}
