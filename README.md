@@ -1,10 +1,10 @@
 # The Hackers Bay
 
-![The Black Commit beside a cracked grey passenger boat marked LUMA](public/hackersbay/art/og-luma-battle.jpg)
+[![Watch the keynote: We blasted Luma. Meet The Hackers Bay.](https://corvus.gent/public/hackersbay/art/keynote/keynote_poster.jpg)](https://corvus.gent/hackersbay/demo)
 
 **Luma is sinking. The Hackers Bay is coming.**
 
-[Live site](https://corvus.gent/hackersbay) · [60-second demo](https://corvus.gent/hackersbay/demo) · [Two-minute pitch and cuts](https://corvus.gent/hackersbay/cuts#pitch)
+[Live site](https://corvus.gent/hackersbay) · [Watch the Compound keynote](https://corvus.gent/hackersbay/demo) · [Two-minute pitch and cuts](https://corvus.gent/hackersbay/cuts#pitch)
 
 Built aboard Boat Hackathon 2026, on the Historic Klamath at Pier 9 in San Francisco. [Boat Hackathon](https://boathackathon.com/) · [ShowBoat Demo Day](https://partiful.com/e/574OkdF3XGK3SzsRR3QK) · [@BoatHackathon](https://x.com/BoatHackathon) · [Pier 9 map](https://www.google.com/maps/search/?api=1&query=Historic+Klamath+Pier+9+San+Francisco)
 
